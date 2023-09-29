@@ -1,0 +1,28 @@
+/*.newFrame {
+    background: url('../public/assets/torii-forest-illustration\ 1\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}*/
+
+
+.newFrame {
+    position: relative;
+}
+
+.newFrame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../public/assets/torii-forest-illustration\ 1\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Replace 'your-image.jpg' with your image file path */
+    opacity: 0.5;
+    /* Adjust the opacity as needed */
+    z-index: -1;
+    /* Place the overlay behind the content */
+}

@@ -9,6 +9,9 @@ const TaskSchema = new Mongoose.Schema({
  body:{type:String},
  title:{type:String},
  genre:{type:String},
+ tags:[String, ],
+ read:{type:String}
+ 
 
  
 }, { timestamps: true });
