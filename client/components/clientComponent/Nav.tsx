@@ -1,10 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../public/assets/Logo.svg'
+import navStyles from '@/styles/Nav.module.css'
 
-const Nav = () => {
+const Nav = ({isMenu, setIsMenu, user}:any) => {
+const [revealed, setRevealed] = useState(true);
+
+   const [dispUser, setDispUser] = useState("")
+
+  
+  useEffect(() => {
+    
+  if(user){
+    setDispUser(user.userName)
+   
+  }
+   
+  }, [])
+
+  
+
+  const dispMenu=()=>{
+setIsMenu(true)
+setRevealed(true)
+setTimeout(() => {
+ 
+    setRevealed(false)
+  
+ }, 500);
+  
+  }
+
+
+
+
+  const closeMenu=()=>{
+setIsMenu(false)
+ setRevealed(false)
+setTimeout(() => {
+ 
+    setRevealed(true)
+  
+ }, 500)
+
+  }
+
+  useEffect(() => {
+    
+  window.addEventListener('resize', closeMenu)
+   
+  }, [])
+
+   
+  
+  
+    
+user&&  console.log(user.userName)
+
   return (
-    <nav className='flex justify-between px-8 py-4 items-center fixed w-full bg-white z-10'>
-
+    <nav className='flex flex-col px-8 py-4 items-center fixed   bg-white w-full z-10'>
+<div className='flex justify-between items-center w-full'>
 <svg width="45" height="38" viewBox="0 0 45 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5.29032 17.6213V17.0697H8.78387V21.2375C8.78387 22.1364 8.51419 22.7983 7.97484 23.2233C7.43548 23.6564 6.70817 23.8729 5.7929 23.8729C5.25355 23.8729 4.73462 23.734 4.23613 23.4562C3.74581 23.1865 3.50065 22.8147 3.50065 22.3407C3.50065 22.2508 3.52925 22.12 3.58645 21.9484L4.00323 20.8697C3.28409 20.551 2.70387 20.0116 2.26258 19.2516C1.82946 18.4916 1.6129 17.6377 1.6129 16.6897C1.6129 15.3985 1.98065 14.328 2.71613 13.4781C3.45978 12.6282 4.48946 12.2033 5.80516 12.2033C6.4671 12.2033 7.10452 12.334 7.71742 12.5955C8.33032 12.857 8.63677 13.1676 8.63677 13.5271C8.63677 13.6661 8.59183 13.8254 8.50194 14.0052L7.81548 15.1329L7.37419 14.9858L7.43548 14.5323C7.46817 14.3362 7.48452 14.1482 7.48452 13.9684C7.48452 13.6497 7.32925 13.3719 7.01871 13.1349C6.70817 12.8979 6.30366 12.7794 5.80516 12.7794C5.05333 12.7794 4.48129 13.1471 4.08903 13.8826C3.70495 14.6099 3.5129 15.5252 3.5129 16.6284C3.5129 17.7235 3.72129 18.6183 4.13806 19.3129C4.56301 19.9994 5.18 20.3426 5.98903 20.3426C6.31591 20.3426 6.63462 20.2772 6.94516 20.1465V17.6213H5.29032ZM5.35161 21.1516C5.06559 21.1516 4.79183 21.1149 4.53032 21.0413V21.4213C4.53032 22.3529 4.72645 22.9291 5.11871 23.1497C5.29849 23.2478 5.54366 23.2968 5.85419 23.2968C6.1729 23.2968 6.43441 23.1824 6.63871 22.9536C6.84301 22.7329 6.94516 22.3979 6.94516 21.9484V20.8329C6.45484 21.0454 5.92366 21.1516 5.35161 21.1516Z" fill="#313131"/>
 <path d="M20.233 4.90968V4.41935H23.1504L25.5898 12.5097H26.2027V13H23.0401V12.5097H23.7511L23.2975 11.0019H19.9633L19.522 12.5097H20.233V13H18.1614V12.5097H18.7743L21.0665 4.90968H20.233ZM21.6182 5.43677L20.1349 10.4503H23.1259L21.6182 5.43677Z" fill="#313131"/>
@@ -16,13 +70,33 @@ const Nav = () => {
 </svg>
 
 
-    <ul className='flex items-center '>
-        <li className='px-3'>Home </li>
+    <ul className={`hidden md:flex items-center ` }>
+        <li onClick={()=>{window.location.href='/'}}  className= 'hover:bg-slate-500 hover:text-white px-3 cursor-pointer p-2 '>Home </li>
          <li className='px-3'>Connect </li>
-          <li className='px-3 bg-black text-white p-2 '>Sign up </li>
-           <li className='px-3'>Login </li>
-    </ul>
+   <li onClick={()=>{window.location.href='/register'}} className={`px-3 bg-black text-white p-2 cursor-pointer hover:bg-slate-500 hover:text-white ${user?`${navStyles.hide}`: `${navStyles.show}` } `}>Sign up </li>
+   <li onClick={()=>{window.location.href='/login'}} className={`px-3 cursor-pointer p-2 hover:bg-slate-500 hover:text-white   ${user?`${navStyles.hide}`: `${navStyles.show}` } `}> Login </li>
+  <li className={`px-3   ${user?`${navStyles.show}`: `${navStyles.hide}` }  `}>Welcome {dispUser}</li>
+  
+       </ul>   
+     
 
+
+<div className='md:hidden'>
+<svg onClick={dispMenu} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className={` bi bi-list md:hidden cursor-pointer  ${isMenu? 'hidden':'flex'}  ${revealed ? '' : 'animate-spin transition-all duration-200 ease-linear rotate-180'} `} viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg>
+<svg onClick={closeMenu} xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className={` bi bi-x-lg md:hidden cursor-pointer   ${isMenu? 'flex':'hidden'}   ${revealed ? 'animate-spin ease-linear transition-all duration-200 rotate-180' : ''}`} viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+</svg>
+</div>
+</div>
+<ul className={`   w-full   ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`}` }>
+ <li className= {`  px-3  hover:bg-slate-500 hover:text-white text-center p-2 ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`} ${user?'block':'hidden'}`  } >Welcome {dispUser}</li>
+        <li  onClick={()=>{window.location.href='/'}} className={`  px-3  hover:bg-slate-500 hover:text-white text-center p-2 ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`}`  }>Home </li>
+         <li className={`  px-3  hover:bg-slate-500 hover:text-white text-center p-2 ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`}`  }>Connect </li>
+    <li  onClick={()=>{window.location.href='/register'}} className={`  px-3  hover:bg-slate-500 hover:text-white text-center p-2 ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`}  ${user?'hidden':'block'}`  }>Sign up </li>
+         <li  onClick={()=>{window.location.href='/login'}} className={`  px-3  hover:bg-slate-500 hover:text-white text-center p-2 ${isMenu ? `${navStyles.dropdownVisible}` :  `${navStyles.transitionHeight}`} ${user?'hidden':'block'}`  }>Login </li>
+</ul>
     </nav>
   )
 }

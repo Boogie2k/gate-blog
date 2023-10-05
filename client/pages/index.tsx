@@ -13,13 +13,14 @@ const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ weight: '400',
  subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({isMenu, setIsMenu, user}:any) {
+  console.log(user)
 
   return (
   <>
 <div className={` ${poppins.className}`}>
   
-  <Nav/></div>
+  <Nav isMenu ={isMenu} user={user}  setIsMenu={setIsMenu}/></div>
  <Hero/>
  <New/>
  <Trending/>

@@ -14,9 +14,9 @@ const login= async (req:Request, res:Response)=>{
 
  }
  const token = jwt.sign({
-    userId:User._id,  userEmail:User.email
+    userId:User._id,  userEmail:User.email, userName:User.username
 }, 'boogieSecret')
-res.status(200).json({userId:User.id, userEmail:User.email,token: token})
+res.status(200).json({userId:User.id, userEmail:User.email, userName:User.username,token: token})
     } catch (error) {
         res.status(500).json(error)
     }

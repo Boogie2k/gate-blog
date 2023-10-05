@@ -1,0 +1,55 @@
+.menuIconTransition {
+
+
+    animation: rotateAnimation 5s linear;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+
+.menuIconTransitions {
+
+
+    animation: rotateAnimation 5s linear;
+    display: flex;
+    flex-direction: column;
+}
+
+.transitionHeight {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s linear;
+
+
+
+
+    /*
+    display: none;
+    transition: display 0.5s linear;
+    /* You can adjust the duration (0.3s) as needed */
+}
+
+.dropdownVisible {
+    max-height: 200px;
+    transition: all 0.5s linear;
+
+    /*  display: flex;
+    flex-direction: column;*/
+    /* Adjust the max height to your preference */
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

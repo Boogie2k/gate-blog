@@ -3,8 +3,8 @@ const Mongoose = require('mongoose')
 
 
 const TaskSchema = new Mongoose.Schema({
- posts:{type:String
- },
+ posts:[Object],
+ blogPosts:[String],
  images:{type:String},
  body:{type:String},
  title:{type:String},
