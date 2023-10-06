@@ -137,9 +137,9 @@ else if(elapsedYear>=1){
 
 
   return(
-  <div className=''>
+  <div key={item._id} className=''>
  {item&& 
- <div key={item._id} className='flex   flex-col lg:flex-row mb-4 lg:mb-0'><  Image className=' w-full lg:w-2/4' style={{}} width={636} height={382} src={item.images} alt=''/>
+ <div  className='flex   flex-col lg:flex-row mb-4 lg:mb-0'><  Image className=' w-full lg:w-2/4' style={{}} width={636} height={382} src={item.images} alt=''/>
   <div className={ ` ${NewStyles.newFrame} py-4 lg:py-0  px-20 flex flex-col justify-center capitalize min-h-full w-full lg:w-2/4 `}>
    <div className='flex justify-between'> <p className='mb-2'>{item.genre}</p> <p className='text-gray-800'>{elapsedTime + ' ' + elapsedTimeType + ' '+ 'ago' }</p> </div>
 

@@ -6,6 +6,7 @@ interface Post {
   title: string;
   genre: string;
   body: string;
+  _id: any;
 }
 
 const [posts, setPosts] = useState<Post[] | null>()
@@ -31,7 +32,7 @@ fetch('https://gate-http.onrender.com/api/blog/').then(res=>res.json().then(d=>{
 {
  posts&& posts.map((item)=>{
 return(
-  <section className='flex justify-evenly'>
+  <section key={item._id} className='flex justify-evenly'>
     <div className='w-1/4'>{item.title}</div>
 <div className='w-1/4'>{item.genre}</div>
 <div className='w-1/4'>{item.body}</div>

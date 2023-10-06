@@ -131,9 +131,9 @@ else if(elapsedYear>=1){
 
 
   return(
-  <div className=''>
+  <div key={item._id} className=''>
  {item&& 
- <div key={item._id} className='flex flex-col min-h-full 80 mr-28 '><Image className='h-64 ' width={329} height={254} src={item.images} alt=''/>
+ <div  className='flex flex-col min-h-full 80 mr-28 '><Image className='h-64 ' width={329} height={254} src={item.images} alt=''/>
   <div className={ ` ${poppins.className} `}>
    <div className='flex justify-between mt-2'> <p className='mb-2 capitalize text-gray-800'>{item.genre}</p> <p className='text-gray-800'>{elapsedTime + ' ' + elapsedTimeType + ' '+ 'ago' }</p> </div>
 
