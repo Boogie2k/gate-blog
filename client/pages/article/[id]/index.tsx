@@ -52,7 +52,7 @@ const IndexFunction = ({isMenu, setIsMenu, user}:any) => {
   const router = useRouter();
   const { id } = router.query;
   const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch(`http://localhost:4000/api/blog/${id}`).then((res) => res.json())
+    fetch(`https://gate-http.onrender.com/api/blog/${id}`).then((res) => res.json())
   );
 
   const [currentPage, setCurrentPage] = useState(1);

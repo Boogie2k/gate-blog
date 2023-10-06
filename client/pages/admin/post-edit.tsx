@@ -7,7 +7,7 @@ const NewPost = () => {
     const[image, setImage]= useState<string | undefined>()
  const [ids, setIds] = useState();
     const editPost= async()=>{
-await fetch(`http://localhost:4000/api/blog/${ids}`, {
+await fetch(`https://gate-http.onrender.com/api/blog/${ids}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
