@@ -9,27 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@react-spring/web": "^9.7.3",
+    
+   
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
-    "cookie": "^0.5.0",
-    "cookies": "^0.8.0",
+    
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "eslint-import-resolver-typescript": "^3.6.1",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^3.1.2",
     "next": "13.4.12",
-    "next-auth": "^4.22.3",
+   
     "postcss": "8.4.27",
     "react": "18.2.0",
-    "react-auth-kit": "^2.12.4",
-    "react-awesome-reveal": "^4.2.5",
+   
+
     "react-dom": "18.2.0",
-    "react-flip-toolkit": "^7.1.0",
+   
     "react-query": "^3.39.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
