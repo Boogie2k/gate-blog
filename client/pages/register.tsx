@@ -12,7 +12,7 @@ const register = () => {
     
 
  let registerUser = () => {
-    fetch("http://localhost:4000/api/users/register", {
+    fetch("https://gate-http.onrender.com/api/users/register", {
       method: "POST",
       headers: {
         "content-type": "application/json",

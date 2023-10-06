@@ -37,7 +37,7 @@ const SkeletonLoading =()=>{
 const BlogFunction = () => {
   let x:any;
 const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('http://localhost:4000/api/blog/').then(res =>
+    fetch('https://gate-http.onrender.com/api/blog/').then(res =>
       res.json()
       
     )

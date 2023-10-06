@@ -7,7 +7,7 @@ const NewPost = () => {
     const[image, setImage]= useState<string | undefined>()
 
     const createPost= async()=>{
-await fetch('http://localhost:4000/api/blog/', {
+await fetch('https://gate-http.onrender.com/api/blog/', {
       method: "POST",
       headers: {
         "content-type": "application/json",

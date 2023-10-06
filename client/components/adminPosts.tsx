@@ -13,7 +13,7 @@ const [posts, setPosts] = useState<Post[] | null>()
 
 
   useEffect(()=>{
-fetch('http://localhost:4000/api/blog/').then(res=>res.json().then(d=>{setPosts(d)}))
+fetch('https://gate-http.onrender.com/api/blog/').then(res=>res.json().then(d=>{setPosts(d)}))
   },[])
 
   posts&&console.log(posts)

@@ -13,7 +13,7 @@ const poppins = Poppins({ weight: '400',
 const Trending = () => {
   const [newTrend, setNewTrend] = useState()
 
-  fetch('http://localhost:4000/api/blog/')
+  fetch('https://gate-http.onrender.com/api/blog/')
   return (
     <div>
         <QueryClientProvider client={queryClient}>
