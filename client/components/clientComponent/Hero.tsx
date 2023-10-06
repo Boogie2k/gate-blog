@@ -3,7 +3,7 @@ import heroStyles from '../../styles/Hero.module.css'
 import rectImg from '../../public/assets/Intersect.png'
 import Image from 'next/image'
 import {  Varela } from 'next/font/google'
-import { Flipper, Flipped } from 'react-flip-toolkit'
+
 
 const varela = Varela({ weight: '400',
  subsets: ['latin'] })
