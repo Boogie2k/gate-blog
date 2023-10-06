@@ -22,7 +22,7 @@ function reducer(state: State, action: Action) {
 }
 
 
-const login = () => {
+const Login = () => {
  const initialState = { email: '', password: '' };
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -91,4 +91,4 @@ fetch("https://gate-http.onrender.com/api/users/login", {
   )
 }
 
-export default login
+export default Login

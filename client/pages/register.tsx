@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import registerStyles from '../styles/Register.module.css'
 
 
-const register = () => {
+const Register = () => {
      
  
   const [email, setEmail] = useState("");
@@ -71,4 +71,4 @@ const register = () => {
    </section>
 )}
 
-export default register
+export default Register
