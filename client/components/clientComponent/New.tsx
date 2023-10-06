@@ -5,7 +5,7 @@ import {  Poppins } from 'next/font/google'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import Link from 'next/link'
 //import { Fade, Slide } from "react-awesome-reveal";
-import { Flipper, Flipped } from 'react-flip-toolkit'
+
 
 
 const queryClient = new QueryClient()
