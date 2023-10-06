@@ -22,7 +22,7 @@ function reducer(state: State, action: Action) {
 
 
 
-const login = () => {
+const Login = () => {
 
 
 
@@ -94,4 +94,4 @@ fetch("https://gate-http.onrender.com/api/users/login", {
   );
 };
 
-export default login;
+export default Login;

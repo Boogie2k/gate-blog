@@ -1,6 +1,6 @@
 
 import React, {useEffect} from 'react'
-import Home from '@/components/adminHome'
+
 import Nav from '@/components/adminNav'
 import Posts from '@/components/adminPosts'
 const home = () => {

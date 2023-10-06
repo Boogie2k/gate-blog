@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-const adminPosts = () => {
+const AdminPosts = () => {
 
 interface Post {
   title: string;
@@ -49,4 +49,4 @@ return(
 </>  )
 }
 
-export default adminPosts
+export default AdminPosts

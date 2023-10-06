@@ -15,7 +15,7 @@ const [revealed, setRevealed] = useState(true);
    
   }
    
-  }, [])
+  }, [user])
 
   
 
@@ -48,7 +48,7 @@ setTimeout(() => {
     
   window.addEventListener('resize', closeMenu)
    
-  }, [])
+  }, [closeMenu])
 
    
   
