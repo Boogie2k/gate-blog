@@ -1,10 +1,9 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { SessionProvider } from "next-auth/react"
+
 import { Inter, Poppins } from 'next/font/google'
 import { useState } from 'react'
 import jwtDecode from "jwt-decode";
-import { copyFileSync } from 'fs'
 
 export default function App({ Component, pageProps }: AppProps) {
 let user:any
