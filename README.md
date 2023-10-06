@@ -1,1 +1,1 @@
-"# gate-blog" 
+"# gate-blog." 
