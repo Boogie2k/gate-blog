@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from '../../components/adminLogin'
-import { useSession } from "next-auth/react"
+
 
 
 const index = () => {
