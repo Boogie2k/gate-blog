@@ -131,7 +131,7 @@ else if(elapsedYear>=1){
 
 
   return(
-  <div key={item._id} className=''>
+  <div  className=''>
  {item&& 
  <div  className='flex flex-col min-h-full 80 mr-28 '><Image className='h-64 ' width={329} height={254} src={item.images} alt=''/>
   <div className={ ` ${poppins.className} `}>
